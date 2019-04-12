@@ -116,6 +116,10 @@ void ConfigParser::parse(){
     
 }
 
+void ConfigParser::GetSections(){
+	
+}
+
 std::string ConfigParser::GetConfigValue(std::string key){
     std::transform(key.begin(), key.end(), key.begin(), ::toupper);
     return this->configurations[key];

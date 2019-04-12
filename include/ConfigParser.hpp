@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 #include <fstream>
 #include <string>
 #include <unordered_map>
@@ -11,6 +12,7 @@ namespace HashParser{
         std::string fileName;
         std::ifstream configFile;
         std::unordered_map<std::string, std::string> configurations;
+		std::vector<std::string> sections;
 
     public:
         ConfigParser();
@@ -33,6 +35,9 @@ namespace HashParser{
 
         /* Return a value of a property */
         std::string GetConfigValue(std::string key);
+		
+		/* Get sections from .ini file */
+		void GetSections();
 
         /* Print all the property-value pairs */
         friend std::ostream& operator<<(std::ostream& out, HashParser::ConfigParser& parser){
